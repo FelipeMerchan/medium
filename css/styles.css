@@ -1,0 +1,63 @@
+:root {
+  font-size: 62.5%;
+
+  /* Colors */
+  --gray30: #212121;
+  --gray20: #212429;
+  --gray10: #616161;
+
+  /* Font */
+  --light: 300;
+  --regular: 400;
+  --bold: 700;
+
+  /* Spacing */
+  --space-half: .5rem;
+  --space: 1rem;
+  --space-2: 2rem;
+  --space-3: 3rem;
+  --space-4: 4rem;
+  --space-5: 5rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  color: var(--gray30);
+}
+
+a {
+  color: var(--gray30);
+}
+
+header {
+  font-size: 1.4rem;
+  color: var(--gray10);
+}
+
+header a {
+  color: var(--gray10);
+  text-decoration: none;
+}
+
+nav details summary {
+  font-weight: var(--bold);
+}
+
+h1 {
+  font-size: 6rem;
+}
+
+h2 {
+  font-size: 3.2rem;
+}
+
+h3 {
+  font-size: 2.4rem;
+}
+
+p {
+  font-size: 1.6rem;
+}
