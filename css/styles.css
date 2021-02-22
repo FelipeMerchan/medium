@@ -28,8 +28,10 @@
 
 :root {
   font-size: 62.5%;
+  scroll-behavior: smooth;
 
   /* Colors */
+  --white: #fff;
   --gray30: #212121;
   --gray20: #212429;
   --gray10: #616161;
@@ -53,6 +55,8 @@
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -65,9 +69,28 @@ a {
   color: var(--gray30);
 }
 
+/* Utilities */
+.wrapper {
+  width: 90.2rem;
+  margin: 0 auto;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+}
+
+.header-content {
+  position: relative;
+}
+
 header {
+  width: 20.8rem;
   font-size: 1.4rem;
   color: var(--gray10);
+  position: absolute;
+  top: 6.4rem;
+  left: -23.2rem;
 }
 
 header a {
@@ -75,8 +98,18 @@ header a {
   text-decoration: none;
 }
 
+header li {
+  margin-block-end: var(--space-2);
+}
+
 nav details summary {
+  margin-block-end: var(--space-2);
   font-weight: var(--bold);
+  line-height: 2.4rem;
+}
+
+nav ol {
+  padding-inline-start: var(--space-2);
 }
 
 hr {
@@ -87,6 +120,7 @@ h1 {
   margin-block-start: calc(var(--space) * 8);
   margin-block-end: var(--space-2);
   font-size: 6rem;
+  font-weight: var(--regular);
 }
 
 h2 {
@@ -96,10 +130,13 @@ h2 {
 }
 
 h3 {
+  position: sticky;
+  top: 0;
   margin-block-start: var(--space-2);
   margin-block-end: var(--space-3);
   font-size: 2.4rem;
   font-weight: var(--regular);
+  background-color: var(--white);
 }
 
 p {
@@ -107,11 +144,29 @@ p {
 }
 
 pre {
+  margin: var(--space-2) 0 0;
+  padding: var(--space-5);
+  font-size: 1.6rem;
+  font-family: var(--primaryFont);
+  line-height: 2.4rem;
   background-color: #FEC62E;
 }
 
 blockquote {
   margin: var(--space-4) 0;
+  padding-inline-start: var(--space-2);
+  border-inline-start: 4px solid var(--gray30);
+  font-size: 2.4rem;
+  line-height: 2.4rem;
+}
+
+blockquote span {
+  position: relative;
+  color: var(--gray10);
+}
+
+blockquote span::before {
+  content: '-';
 }
 
 .section-content {
@@ -124,16 +179,21 @@ blockquote {
 }
 
 .section-content h3 {
+  margin-block-start: var(--space-5);
+  padding-block-end: var(--space);
   counter-increment: titleList;
 }
 
 .section-content h3::before {
-  content: counter(titleList, decimal);
+  content: counter(titleList, decimal) '. ';
 }
 
 .section-content h3::after {
-  display: block;
-  width: 3.2rem;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: inline-block;
+  width: 8rem;
   height: .4rem;
   background-color: var(--gray30);
   content: '';
