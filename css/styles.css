@@ -32,9 +32,10 @@
 
   /* Colors */
   --white: #fff;
-  --gray30: #212121;
-  --gray20: #212429;
+  --gray30: #3A3539;
+  --gray20: #A5A3A5;
   --gray10: #616161;
+  --background: #251F24;
 
   /* Font */
   --primaryFont: 'Roboto', system-ui;
@@ -53,6 +54,13 @@
   --space-5: 4rem;
 }
 
+.is-light-mode {
+  --white: #fff;
+  --gray30: #212121;
+  --gray20: #212429;
+  --gray10: #616161;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -61,8 +69,9 @@
 
 body {
   margin: 0;
-  color: var(--gray30);
+  color: var(--white);
   font-family: var(--primaryFont);
+  background-color: var(--background);
 }
 
 a {
@@ -71,9 +80,10 @@ a {
 
 /* Utilities */
 .wrapper {
-  width: 90.2rem;
+  max-inline-size: 90.2rem;
   margin: 0 auto;
 }
+
 
 .header {
   position: sticky;
@@ -87,19 +97,20 @@ a {
 header {
   width: 20.8rem;
   font-size: 1.4rem;
-  color: var(--gray10);
+  color: var(--white);
   position: absolute;
   top: 6.4rem;
   left: -23.2rem;
 }
 
 header a {
-  color: var(--gray10);
+  color: var(--gray20);
   text-decoration: none;
 }
 
 header li {
   margin-block-end: var(--space-2);
+  color: var(--gray20);
 }
 
 nav details summary {
@@ -136,10 +147,11 @@ h3 {
   margin-block-end: var(--space-3);
   font-size: 2.4rem;
   font-weight: var(--regular);
-  background-color: var(--white);
+  background-color: var(--background);
 }
 
 p {
+  color: var(--gray20);
   font-size: 1.6rem;
 }
 
@@ -149,7 +161,7 @@ pre {
   font-size: 1.6rem;
   font-family: var(--primaryFont);
   line-height: 2.4rem;
-  background-color: #FEC62E;
+  background-color: var(--gray30);
 }
 
 blockquote {
@@ -176,12 +188,21 @@ blockquote span::before {
 
 .section-content img {
   margin-block-start: var(--space-5);
+  max-inline-size: 100%;
+}
+
+.section-content h2 + img {
+  margin-block-start: 0;
 }
 
 .section-content h3 {
-  margin-block-start: var(--space-5);
+  margin-block-start: var(--space-2);
   padding-block-end: var(--space);
   counter-increment: titleList;
+}
+
+.section-content:nth-of-type(2) h3 {
+  margin-block-start: var(--space-5);
 }
 
 .section-content h3::before {
@@ -195,7 +216,7 @@ blockquote span::before {
   display: inline-block;
   width: 8rem;
   height: .4rem;
-  background-color: var(--gray30);
+  background-color: var(--white);
   content: '';
 }
 
