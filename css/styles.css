@@ -87,7 +87,7 @@ a {
 
 .header {
   position: sticky;
-  top: 0;
+  inset-block-start: -4.2rem;
 }
 
 .header-content {
@@ -99,8 +99,8 @@ header {
   font-size: 1.4rem;
   color: var(--white);
   position: absolute;
-  top: 6.4rem;
-  left: -23.2rem;
+  inset-block-start: 6.4rem;
+  inset-inline-start: -23.2rem;
 }
 
 header a {
@@ -121,6 +121,10 @@ nav details summary {
 
 nav ol {
   padding-inline-start: var(--space-2);
+}
+
+.main-content {
+  padding-inline: var(--space-2);
 }
 
 hr {
@@ -144,7 +148,7 @@ h2 {
 
 h3 {
   position: sticky;
-  top: 0;
+  inset-block-start: 0;
   margin-block-start: var(--space-2);
   margin-block-end: var(--space-3);
   font-size: 2.4rem;
@@ -164,6 +168,8 @@ pre {
   font-family: var(--primaryFont);
   line-height: 2.4rem;
   background-color: var(--gray30);
+  border-radius: .8rem;
+  overflow: auto;
 }
 
 blockquote {
@@ -215,8 +221,8 @@ blockquote span::before {
 
 .section-content h3::after {
   position: absolute;
-  left: 0;
-  bottom: 0;
+  inset-inline-start: 0;
+  inset-block-end: 0;
   display: inline-block;
   width: 8rem;
   height: .4rem;
@@ -243,5 +249,5 @@ blockquote span::before {
 }
 
 ::selection {
-  background-color: #FEC62E;
+  background-color: var(--gray20);
 }
