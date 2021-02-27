@@ -90,28 +90,21 @@ a {
 }
 
 
-.hero {
-  height: 35rem;
-  width: 100%;
-  background-image: linear-gradient(to top, rgba(255, 255, 255, .2),transparent), url('../images/pattern.png');
-}
-
-.header {
-  position: sticky;
-  inset-block-start: -4.2rem;
-}
-
 .header-content {
-  position: relative;
+  margin-block-start: var(--space-3);
+  padding-inline: var(--space-2);
 }
 
 header {
-  width: 20.8rem;
   font-size: 1.4rem;
   color: var(--white);
-  position: absolute;
-  inset-block-start: 6.4rem;
-  inset-inline-start: -23.2rem;
+}
+
+.hero {
+  block-size: 10rem;
+  inline-size: 100%;
+  background-image: linear-gradient(to top, rgba(255, 255, 255, .2),transparent), url('../images/pattern.png');
+  background-size: 6.5rem;
 }
 
 header a {
@@ -145,9 +138,9 @@ hr {
 }
 
 h1 {
-  margin-block-start: calc(var(--space) * 8);
+  margin-block-start: var(--space-5);
   margin-block-end: var(--space-2);
-  font-size: 6rem;
+  font-size: 4rem;
   font-weight: var(--regular);
 }
 
@@ -278,6 +271,7 @@ blockquote span::before {
   overflow: auto;
   scroll-behavior: smooth;
   white-space: nowrap;
+  scroll-snap-type: x mandatory;
 }
 
 .slider-slide .video {
@@ -325,4 +319,33 @@ blockquote span::before {
   border: none;
   cursor: pointer;
   background-color: var(--actionColor);
+}
+
+@media screen and (min-width: 1366px) {
+  .hero {
+    block-size: 35rem;
+    background-size: initial;
+  }
+
+  .header {
+    position: sticky;
+    inset-block-start: -4.2rem;
+  }
+
+  .header-content {
+    position: relative;
+  }
+
+  header {
+    inline-size: 20.8rem;
+    position: absolute;
+    padding-inline: var(--space-2);
+    inset-block-start: 6.4rem;
+    inset-inline-start: -23.2rem;
+  }
+
+  h1 {
+    font-size: 6rem;
+    margin-block-start: calc(var(--space) * 8);
+  }
 }
