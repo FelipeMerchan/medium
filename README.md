@@ -1,4 +1,4 @@
-# Medium
+#Nemium
 
 Sitio web para un blog sobre tecnologías frontend desarrollado para el [curso esencial de HTML y CSS](http://https://leonidasesteban.com/cursos/html-css-fundamentos "curso esencial de HTML y CSS") de Leonidas Esteban.
 
